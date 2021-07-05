@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.navBrand {
+  flex-grow: 1;
+  cursor: default;
+}
+
+.navLink {
+  justify-self: flex-end;
+  margin: 0 1rem;
+  cursor: pointer;
+  &:hover {
+    color: #d8d8d8;
+  }
+}
