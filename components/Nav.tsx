@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { IconButton } from '@material-ui/core';
+import Link from 'next/link';
 
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
@@ -19,14 +20,18 @@ export default function Nav(){
     
     return (
     <div className={styles.nav}>
+        <Link href="/">
         <h1 className={styles.navBrand}>Jason Cramer</h1>
+        </Link>
         <div className={styles.menu}>
             {!isLarge&&<IconButton onClick={() => setMenuOpen((open) => !open)} className={styles.menuButton}>
                 {menuOpen ? <CloseIcon/> : <MenuIcon />}
             </IconButton>}
             {(menuOpen || isLarge)&&<div className={styles.navLinkContainer}>
                 <a className={styles.navLink}>About</a>
-                <a className={styles.navLink}>Blog</a>
+                <Link href="/blog">
+                    <a className={styles.navLink}>Blog</a>
+                </Link>
                 <a className={styles.navLink}>Contact</a>
             </div>}
         </div>

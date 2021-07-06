@@ -1,0 +1,17 @@
+type Category {
+  name: String!
+  posts: [Post]
+}
+
+type Post {
+  title: String!
+  description: String!
+  content: String!
+  categories: [Category]
+  author: String!
+}
+
+type Query {
+  categories: [Category!]!
+  posts: [Post!]!
+}
