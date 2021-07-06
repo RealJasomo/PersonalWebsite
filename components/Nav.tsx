@@ -8,7 +8,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import styles from './Nav.module.scss'
 export default function Nav(){
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
-    const [isLarge, setIsLarge] = useState<boolean>(false);
+    const [isLarge, setIsLarge] = useState<boolean>(window.innerWidth > 600);
     useEffect(() => {
         const handler = () => {
             setIsLarge(window.innerWidth > 600);

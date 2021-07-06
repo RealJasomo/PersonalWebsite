@@ -1,10 +1,11 @@
 import FrostedGlass from "@components/FrostedGlass";
-import { gql } from '@apollo/client';
+import { ApolloError, gql } from '@apollo/client';
 import { client } from "util/graphql-client";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 
 interface IBlog{
-    posts: Post[]
+    posts: Post[],
+    error?: ApolloError
 }
 
  export interface Post{
@@ -20,7 +21,8 @@ export interface PostsResponse{
     }
 }
 
-export default function Blog({ posts } : IBlog){
+export default function Blog({ posts , error} : IBlog){
+    console.log(error);
     return(<>
     <h1>Blog Posts</h1>
     {posts.map(post =>{
@@ -55,7 +57,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
     return {
         props: {
-            posts: data.posts.data
+            posts: data.posts.data,
+            error: error
         }
     }
 }
