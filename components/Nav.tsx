@@ -8,11 +8,12 @@ import CloseIcon from '@material-ui/icons/Close'
 import styles from './Nav.module.scss'
 export default function Nav(){
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
-    const [isLarge, setIsLarge] = useState<boolean>(window.innerWidth > 600);
+    const [isLarge, setIsLarge] = useState<boolean>(false);
     useEffect(() => {
         const handler = () => {
             setIsLarge(window.innerWidth > 600);
         };
+        handler();
         window.addEventListener("resize", handler);
         return () => window.removeEventListener("resize", handler);
     }, [])
