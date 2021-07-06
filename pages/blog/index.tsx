@@ -47,9 +47,12 @@ const POSTS = gql`
 `
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const { data } = await client.query<PostsResponse>({
+    const { data, error } = await client.query<PostsResponse>({
         query: POSTS
     });
+    if(error){
+        console.error(error);
+    }
     return {
         props: {
             posts: data.posts.data
