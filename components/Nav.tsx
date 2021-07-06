@@ -13,6 +13,7 @@ export default function Nav(){
         const handler = () => {
             setIsLarge(window.innerWidth > 600);
         };
+        handler();
         window.addEventListener("resize", handler);
         return () => window.removeEventListener("resize", handler);
     }, [])
