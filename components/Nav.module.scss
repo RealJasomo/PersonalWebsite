@@ -8,11 +8,36 @@
   cursor: default;
 }
 
-.navLink {
+.menu {
+  position: relative;
   justify-self: flex-end;
+}
+
+.navLink {
   margin: 0 1rem;
   cursor: pointer;
+  transition: 200ms ease;
   &:hover {
     color: #d8d8d8;
+  }
+}
+
+.menuButton {
+  z-index: 2 !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .navLinkContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+    border-radius: 15px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    height: 20vh;
+    background-color: white;
   }
 }
