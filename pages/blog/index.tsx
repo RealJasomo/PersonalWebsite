@@ -1,7 +1,12 @@
 import FrostedGlass from "@components/FrostedGlass";
 import { ApolloError, gql } from '@apollo/client';
 import { client } from "util/graphql-client";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { GetServerSideProps} from "next";
+import Link from 'next/link'
+
+import Button from '@material-ui/core/Button';
+
+import styles from './blog.module.scss';
 
 interface IBlog{
     posts: Post[],
@@ -27,9 +32,18 @@ export default function Blog({ posts , error} : IBlog){
     <h1>Blog Posts</h1>
     {posts.map(post =>{
         return <FrostedGlass key={post._id}>
-            <h1>{post.title}</h1>
-            <p>{post.description}</p>
-            <p>by {post.author}</p>
+            <div className={styles.post}>    
+                <div className={styles.left}>
+                    <h1>{post.title}</h1>
+                    <p>{post.description}</p>
+                    <p>by {post.author}</p>
+                </div>
+                <div className={styles.right}>
+                    <Link href={`/blog/${post._id}`}>
+                        <Button>Show Post</Button>
+                    </Link>
+                </div>
+            </div>
         </FrostedGlass>
     })}
     </>)
@@ -58,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return {
         props: {
             posts: data.posts.data,
-            error: error
-        }
+            ...(error&&{ error })
+            }
     }
 }

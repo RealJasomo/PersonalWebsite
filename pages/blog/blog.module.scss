@@ -1,0 +1,16 @@
+.post {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "descriptions button";
+  .left {
+    grid-area: descriptions;
+  }
+  .right {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-area: button;
+  }
+}
