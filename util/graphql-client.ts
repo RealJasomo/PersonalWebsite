@@ -9,7 +9,6 @@ const httpLink = createHttpLink({
 
 const authLink = setContext((_, { headers }) => {
     const { NEXT_PUBLIC_FAUNA_CLIENT_KEY } = process.env;
-    console.log(NEXT_PUBLIC_FAUNA_CLIENT_KEY);
     return {
         headers: {
             ...headers,
