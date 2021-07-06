@@ -4,18 +4,21 @@
 }
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 5rem;
   row-gap: 1rem;
   grid-template-areas: "aside paragraph";
   & > .paragraph {
     grid-area: paragraph;
   }
   .aside {
+    display: flex;
     grid-area: aside;
+    justify-content: center;
+    align-items: center;
     img.image {
-      max-height: 20vh !important;
-      width: 100%;
+      min-width: auto !important;
+      width: auto !important;
       border-radius: 0 50% 0 50%;
       border: 5px solid white !important;
     }

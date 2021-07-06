@@ -21,7 +21,7 @@ export default function Home() {
         <div className={styles.paragraph}>
           <FrostedGlass> 
             <h1>Hi there!</h1>
-            <p>I am a <b>full stack</b> software engineer</p>
+            <p>I am a third-year computer science student at Rose-Hulman Institute of Technology.  I have a passion towards full-stack web development.</p>
           </FrostedGlass>          
         </div>
       </div>

@@ -10,7 +10,7 @@ import Nav from '@components/Nav'
 function MyApp({ Component, pageProps }: AppProps) {
   return <>
     <ThemeProvider theme={LightTheme}>
-      <FrostedGlass style={{minHeight: '80vh'}}>
+      <FrostedGlass style={{minHeight: '95vh', maxHeight: '95vh', overflow: 'auto'}}>
         <Nav/>
         <Component {...pageProps} />
       </FrostedGlass>
