@@ -1,7 +1,7 @@
 import FrostedGlass from "@components/FrostedGlass";
 import { ApolloError, gql } from '@apollo/client';
 import { client } from "util/graphql-client";
-import { GetServerSideProps} from "next";
+import { GetStaticProps } from "next";
 import Link from 'next/link'
 
 import Button from '@material-ui/core/Button';
@@ -49,7 +49,7 @@ export default function Blog({ posts , error} : IBlog){
     </>)
 }
 
-const POSTS = gql`
+export const POSTS = gql`
     query GetPosts{
         posts{
             data{
@@ -62,7 +62,7 @@ const POSTS = gql`
     }
 `
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
     const { data, error } = await client.query<PostsResponse>({
         query: POSTS
     });
@@ -76,3 +76,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             }
     }
 }
+
