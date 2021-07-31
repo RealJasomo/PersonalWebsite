@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import QueerSpace from '@res/QueerSpace.png';
 import LegoTracker from '@res/LegoTracker.png';
+import Joust from '@res/joust.gif';
 import ReactIcon from '@res/React.svg';
 import Firebase from '@res/Firebase.svg';
 import Sql from '@res/SqlIcon.png';
@@ -68,7 +69,7 @@ export default function About(){
                     </FrostedGlass>
                     <FrostedGlass className={styles.project}>
                         <h1>Java Joust</h1>
-                        <img src="https://github.com/RealJasomo/JavaJoust/blob/master/JavaJoust/resource/splash.gif?raw=true" />
+                        <Image src={Joust} />
                         <p>An arcade game originally developed in 1982 by Williams Electronics. This is a clone created in Java</p>
                     </FrostedGlass>
                 </div>
