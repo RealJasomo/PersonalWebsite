@@ -1,0 +1,49 @@
+section.section {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  .about {
+    a {
+      text-decoration: underline;
+      color: darkblue;
+      margin-left: 1rem;
+    }
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  ul {
+    margin-left: 2rem;
+    h2 {
+      font-size: 1.5rem;
+      span {
+        font-weight: 500;
+        font-style: italic;
+      }
+    }
+  }
+  .projectCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .project {
+      width: 50vw;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      h1 {
+        display: flex;
+        width: 100%;
+        .icons {
+          margin-left: auto;
+          img {
+            height: 2em;
+            width: 2em;
+          }
+        }
+      }
+    }
+  }
+}

@@ -29,7 +29,9 @@ export default function Nav(){
                 {menuOpen ? <CloseIcon/> : <MenuIcon />}
             </IconButton>}
             {(menuOpen || isLarge)&&<div className={styles.navLinkContainer}>
-                <a className={styles.navLink}>About</a>
+                <Link href="/about">
+                    <a className={styles.navLink}>About</a>
+                </Link>
                 <Link href="/blog">
                     <a className={styles.navLink}>Blog</a>
                 </Link>
